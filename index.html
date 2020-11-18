@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>massa da molécula</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <section>
+        <h1>Calcular a massa da molécula ao passar dos anos</h1>
+        <div id="inputs">
+            <input type="number" name="tempo" placeholder="número de períodos" id="time">
+            <input type="number" name="massainicial" placeholder="massa inicial" id="massainicio">
+
+        </div>
+        <div>
+            <button onclick="massadamolecula()">Calcular</button>
+        </div>
+        <div id="valor-massa"></div>
+    </section>
+</body>
+
+<script>
+    function massadamolecula(){
+        var tempodecorrido = parseFloat(document.getElementById("time").value);
+        var massacomeco = parseFloat(document.getElementById("massainicio").value);
+        var anos = tempodecorrido * 5;
+        var divisor = Math.pow(2,tempodecorrido);
+        var massa = massacomeco / divisor;
+
+        
+        document.getElementById('valor-massa').innerHTML = 'a massa da molécula após ' + anos + ' anos é de ' + massa + ' g.';
+    }
+</script>
+
+</html>
